@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <div class="app-header-left">
+                <span class="app-icon"></span>
+                <p class="app-name">Portfolio</p>
+                <div class="search-wrapper">
+                    <input class="search-input" type="text" placeholder="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search"
+                        viewBox="0 0 24 24">
+                        <defs></defs>
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="app-header-right">
+                <button class="mode-switch" title="Switch Theme">
+                    <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                        <defs></defs>
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="add-btn" title="Add New Project">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                </button>
+                <button class="notification-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-bell">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                </button>
+                <button class="profile-btn">
+                    <img src="https://lh3.googleusercontent.com/W9TRuk9ofzZJ7GBeQStKwMzo2pgJa0vFCjtJ4LIP-EonMfw0CO7ozBlCupg5kBEN6RX9KSZXfDqCf95JSEYCySvn17q1YOW8J_QZSz3x8f3nt431rgowApc2xt29F_cr3RxLAXJGycztmVWesjAAoJOxb8U12GfsQuDtJllhH2u0hlIWB8tP00Ef--Gb0zaY8EKpci8zdSHdCglN9VGYAqqEo8fpzXr9I8uXd5C4NkMtBJ2aNBsRJ6kWdpriRKBYYalibohTUXx8aYRrIKgevi6a6zJF7yuduBNp0tihs3I1J46E4asHPpvpIqLRqzAB-1JNl1zwCNS2dEqmaGC8h24n33MVWAO1i2PjMgw5Bd_Ug6-qm5U_dqd2lOTgGsy4XSmIX6Z_Q-OJkj99smMm67ZQLPieFNV4OOKkOkfWCJOvIZ3zEXSWiABpj08xcwm13QyorxPRwwVqBsz5XUTE6Gb8QpFu_QHfuhNQEFhzuqMSk8Jr4kGGVtVg5lWOe6ZdbKNigWnT7Oah4nbuBbK3p026zbOmQYUFUTjc-gwvS26Tzd_8nUFmqhIIB_laUKHDjiAVZf17AmiqtJJX3moGhIcr_RRgR0_418EMEjA-eeXKCddiqMQZhPA5PU4-jhsihnu8mLSJkeBWSXWuzmr0b_bc7OiJM_GI4uQ-TMsZTzJJuIPl5szKUQPNV4nhrNq6MNQ1YrFWBB8rpQpQRRkjzQ869-O86r9KA_ppe2CJKyxVbIW8dlyEHUBVtfHzqvaDZRumYOqEdlwT76Q033R5Q_zJQgKhYgvvFUR9GOV_Y11UUwL-ETRXK57dvjki2xDjCZGH4hQaZkfwHwb0JGp9x8fM8RWTegQBs_QuTPkYccdjdNRaHXMamT3L-bhhg5QCq8aiI71jklP1w5XKjRSm3SV_NciPw_YmNV7tuyud-BOnvYELfzTpWNmm0bz5ezMBVq460HhDKWEAeIxn7mMRqAkjefbcVdNyedB2iIsfFkVBuXBoe0zgN18cGEvCEhrafE9QWihIQ1Z91p2ecbKW4nQNhO5o3g=w718-h898-s-no?authuser=1" />
+                    <span>Deepak Kumar</span>
+                </button>
+            </div>
+            <button class="messages-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-message-circle">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+            </button>
+        </div>
+        <div class="app-content">
+            <div class="app-sidebar">
+                <a href="" class="app-sidebar-link active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                </a>
+                <a href="" class="app-sidebar-link">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="feather feather-pie-chart" viewBox="0 0 24 24">
+                        <defs />
+                        <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+                    </svg>
+                </a>
+                <a href="" class="app-sidebar-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-calendar">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </a>
+                <a href="" class="app-sidebar-link">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="feather feather-settings" viewBox="0 0 24 24">
+                        <defs />
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="projects-section">
+                <div class="projects-section-header">
+                    <p>Projects</p>
+                    <p class="time">June 15</p>
+                </div>
+                <div class="projects-section-line">
+                    <div class="projects-status">
+                        <div class="item-status">
+                            <span class="status-number">60</span>
+                            <span class="status-type">In Progress</span>
+                        </div>
+                        <div class="item-status">
+                            <span class="status-number">35</span>
+                            <span class="status-type">Upcoming</span>
+                        </div>
+                        <div class="item-status">
+                            <span class="status-number">95</span>
+                            <span class="status-type">Total Projects</span>
+                        </div>
+                    </div>
+                    <div class="view-actions">
+                        <button class="view-btn list-view" title="List View">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-list">
+                                <line x1="8" y1="6" x2="21" y2="6" />
+                                <line x1="8" y1="12" x2="21" y2="12" />
+                                <line x1="8" y1="18" x2="21" y2="18" />
+                                <line x1="3" y1="6" x2="3.01" y2="6" />
+                                <line x1="3" y1="12" x2="3.01" y2="12" />
+                                <line x1="3" y1="18" x2="3.01" y2="18" />
+                            </svg>
+                        </button>
+                        <button class="view-btn grid-view active" title="Grid View">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-grid">
+                                <rect x="3" y="3" width="7" height="7" />
+                                <rect x="14" y="3" width="7" height="7" />
+                                <rect x="14" y="14" width="7" height="7" />
+                                <rect x="3" y="14" width="7" height="7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-boxes jsGridView">
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #fee4cb;">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Web Designing</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
+                                </div>
+                                <p class="box-progress-percentage">60%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/uAr_DnjMwbgRWiWdCU_nYmsOCZz2OmoN2A44xmqWjCayuHx8LeGxY8r_2dBMnzbP7HMdDNM-oczHSXVA-IEqEYZkRP2UH-2J2R7B9guxA678V1lWZHUs22lza_kvTVcxA-4oIoPsC1yYDc8QvjrcpP01TVOSKDaYKuSdRiYYeMlhlx6aOQenQ-hYRaPdsVcpmSh3WlFm3lKwCPPqaD3T2pT-9xGmFfAI5Sma0cb_3qsSEGT6JTUfOAKKupS8qAMMWgIlwptlB0_Aw5QE-Wo6bCQ1jyoto9jtBQuKlTw220-UDP6pfWLt7Lc4DMVWXT2NazV-Bk0j60zwO_LwzM0aBee8tNVWRh57Qt1NlD8seepELFCyMAQt7yjtctVWS3LSZRfcuq_CmepofqLgmZEDXofEpmArHb5BO0XiN1uiECrtFj-mtnWWFb1OOsOk27-oyNLss8MMIbSDPBmddLsPj4m75HZU_LrBi5NqqYTAXZLVKhVomYyfEHUVxF8x8z7FoWWd80yf2qqmL118vB9D4y8uS-ySESiYa7mo6zUQyhNBAxwQ5yaikJjkRJF_EWA0qyMsly7avjJ5j5QQv_VLjRBQB0kB8jJqkZ7-fMDrK22nukHsCSL1bBFMIMQ0OnWhU4wKjsvfCrmh22HVp_WsmOcqaDV724naZRNcgjjBXtd6RCjhdDpqg0jnkStbp8Gxwe-vV6KsFvcZXbBfAE2XUARRhjAY9uvN6G0nFOj3FSzRG7gCVEvzGStu6IJevNBq-oDoNLZIAj_6WBJdQiNyT03eBdg0gjC2cCwEQyviUwoSDmDfLOdN3wnMK-FhvvRdsovczrQ6LDxBELpDpDb90Nrh7fR8FbjYybY34Gj1w18hrZoxeA3cP6TA9gTNw5mMvw2B0YWNiaTUT4t-V8FoIy6hzLa7eFuEXm8gYcekE1_CJZqTq6MIUdHrCfRWgnXQab8ZB829NMxJk_PHZ7F9u7KP4ZEsuPja8Vcc4H4nbPFbUotT4bQPK5wNm3rOKpz3KLwBeUlvf4dX5zDd6ZmrF95RYN1RgA=w430-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/U8exlIkMnOI37U--1kfzZZKcmlZUz3gmV-KtPLM2q6uDQvY-MORzor7V-rTSLFw56SRha52k9svp58ll6lIDMtPQfLR3ipS5DNwd7U62_LtyzblGntR_U7M8MkLNh5VUIqlUr_LYQhGR4B8kYpGJ3j3y0fdds3eGspUyt-NVmY37r6ADSiLkBsmQlhSgySE2FOAgp-O4Ql3nlVwkjK-5S_6747W6Lh1X5t1P8RlKZHd54_7sh2QLkz2E2l8SvsS5bF4s8d-dfZjTjXbC5qqi_zV2N4wAKXEJHpbJdhlmZoQ6UT_2gSOlNWfYv4T1teRjkeC7s6hLWU_XWkBBiGZdo-fa3Ga2-RRykS1-pMn2VMkGVygR4i3_q286dvIwdDWO-ST2JnAj6p578IKYrZodK20mIfqMc9NE5Tt-533X6w-hDFCBejuiY40Lt5NeZR58IL8cgRwPN6Z3JoTUKIri_odeOe0nXfTadhuKmaWTENslHqGMSrhs8hx24Gz4qeGxVwD0q-Lmxu6stoWNp4qhdDGpm1UdddQuYJ2BXqnbEFzi9nvXRzCONstfUrsno5hbK3oLDs4aryURHCRm0mwvPYxa_BLzl9EICk2-x5HpI4mlXi0JGZEjyrPj5f4CMGizFVbJ-eZ4GUfs2TnFxsoVKTAEEgNKZ1ulF4SL4_0NtlztVTI30W26z8UUSdzDtXKlNhUxBWTHRcBXCLGkDlErKRDD6I-ki_TZkpqP0pddm7zojWFgNSFtthBHs2auKtJSXj1P__4iPyowJ1-wcOG6VwNXIrchy15ho4V4M5R-v2dMZbXOosiHpnmnDRTJaIjUdGjrIhKWE6nEvF1R8Cxa2jA_MpJloIYrH1COD1x6-WJn4hSpLGmRggXOcUfxKw2pjC_U6jbmKZlhFLpLqNB6DScshei_ouxdiYmY8i5WS-vrq-BsT_-joS-2M8nxyJUfdnfJ0sjVdZyXqeQuw1A_AGoWr34h12b9jU6mKPiXyuh1QKMEicqdPshUpi6bWSPeUOj291Jue7DkZmQd3hMXlE4Zi15EFg=w674-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #ff942e;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #ff942e;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #e9e7fd;">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Testing</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 50%; background-color: #4f3ff0"></span>
+                                </div>
+                                <p class="box-progress-percentage">50%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/pJWgNvppSfqRQS19ZkMEIvce5q-9ZvMVH0y2-w1vW2x1AFCW3xsvu6HLzdrlCv-ac2kOTB37ockwit4y6O3ZjzGFEi2v7mwFfyeqmxKEyGnTPuj-ODVhIq8G2qcMwCAOgnAIXDJAMcVweXiOJG4jCBcjNa8SDfEjlkwDDUjo9scAFiyj0WQdrFCS8RQ8tvIHW3XyHItYVSXAJN4mO0TtQ-xap4xTGkaUQxq4Gq8_clkMK9Sa6aAjn0SUZ_fjTf-vCwIAd658bp66buDKWsXLV1Z4UXaQntXvSmllKYIUYF8WGW33QtU63JlGF2_9lhb2cPWkS1uSqt_KGxlBSBwIu7YirMj_M18NvcZ47QNJq3p40cvjCAF8-4mkZB6Uk6nBM-qogSj5mZ_E9Si8Avqqv4whqgUUJyKADYlKPTpq0ZQR8MHO6OB_1eCyMxMbds0Rtnqkmf6AOykQWUpDFtgxPovdfaI1DKyPbDeoAaThet1VXkhsBPhqGE7NYmoT4-sUVdwJqeUEB18AsMP0RSI5q7lXoglDcANv1KGGvgwmJ8w4bO2iIzDQorBg6aV0fkM5EdHNnVxM5zvfA2mMgwyrKhuNZWks9Z_kBMJbRidRGpTEdpPllZHM7-xJzw7KfIjF3YLE5NEsnSeu0h6CnMj_VdHDZsYJDjGfsy2AzqdiPWcbwJVkrjZVJC2L-OvQmipNvU-iwPPm6-ypbor6wrktKzBGSk68BpDdyNp5IH79YY040u8Nk9eN421CRHKqFKd0cd9p3l-WdDZKfiBieVpMzDX7qKD6Hns5w06-hAtlPjBk9WxmP9vjD1H6qrEpEu71Iw556GtyoaPbEKTjEHhIZj_9lDC3tej4mC5V9kBRw5kYpRytDGGu6IkrujsXNH5sendkJpkYT0-1DRNPLi64eoS9VzJ2fmaA5VE8t-EkGcP49bw3IopET0YsHv7_dbaAw_mynVkqBzKBw1DJ8GMGB-xTxXfCgGT7FVeQKRPRMc8-xsnGkDTrbfuL54YDADy7yFklpzOxoVUst3iMb5yCDCalXiSJ1w=w1920-h864-s-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/wNGZ6G7D0oQNVpfUOoEUTpZIMqYKJKMFuKHEdOWjZX11DLS8wzy2B8mWWXo1W5jZ8pD821c49yjIDjfR5Wj2dxaIVflDGMjeFHGGN-Boj8mVeV1DBCo5UOVXDn5NTistuW_wO3P6izeAZt995lTwFUP1Bq3ILp47d7rEfglwu_gBrUaebzpNW_epDEZFDbLjKcKtpuxGjhJDtQgTmWCGfC8RDXPqaoBbNTKh0mzQt8U8p-ywxaooZ5VyjXCSgZfEt_nz8cr4wqsG4BfBJAp8JWAw6FDUGDjqraCWOeQaaE3d3bf6jDWBVJ0vJczeziqzvNPac4BUcDQrWRE8s_U57FmlRAamGfqIjErQVp-7QDuVGAC14rMsBuywMo-BjOD_gQNxQgfTwLroJpil5OK6ufi8wQTulGAVJMAAAJBdtZXqdn1ZuiTpdp4FthHM-kTjWOzNJ_g7DvDKuSYJ6VEXHG80vVx6d234AUu2_pefoPomG7PJzyn5orfbVxB9U_7PsbCFd6K_r7aB4lUxrjVR9kOIN2c9oDuzl_FSP3RglwV_WASxM_iq2uMfZrOoDOP_mUYxWqN3N2lL8RHHeinHbbBpgNzgO5yN4ab2eBEKpWdQ2Oo3FEYT1qbheDQ6CWies6IIoCfMHOQuCXo76b7CMGM4w51mtO-0luWgKdTM5tll1WufhHf6ioJFmpaOvM4jVMxstwzHJj0CyG9mB_nVVdJ40kw-9Z2qxueh084hMYiMT8hBC4a4q7F8ugLBVYOCFLBgsXkChXuhp7Gh4PBQueVQwB9VV-oSRH8bqo27RM6d8cWNfu4c6OLazv1DukkeDmMuy0pYXfMlam1ban_NwtHpwilHyrdEhRen6CHIH72dm8vyZ--4OATq0YYUF2xthPLz5v6LXAch4hnnEEr0dxZzexPSEfz-05LWTCKcatiKveFI1cIuRTCMvZo_Ds32XAnvRxHSxyoI0q6abqvHUVywB7xwrFoHvHLSTU7Ovp5BAxQSK4woYg6tc7IaomHqE6glgROeYNW1u1gTeAAWKzLKRHeXMw=w718-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #4f3ff0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #4f3ff0;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-wrapper">
+                        <div class="project-box">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Svg Animations</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 80%; background-color: #096c86"></span>
+                                </div>
+                                <p class="box-progress-percentage">80%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/nhF19eJxNl3pphZ2hhoXuxQ_rsgH-BQ6sVt_dFo2XJ3Q_lle_FXdxZeT33HaT884wH2yFGW7oAVPeQJsLm75B7nui4M1oYiPYiNi1_u3xH_s-qkttv4st3DKTtqYPxFILw3_sTdaahzC9BiTcUqc1eavCQhhDdJ42A4ZC73on2NerWh_yFA1Uc3s73n13qhTp-XytUQ1TvU5zNbKdwAjfCs1IHlF1k0eN-g_L48PI85zG4btBGnfX_IWsgwh-D9b7WkVgR5pDYC-8JOIaalLbTjgcP7JeRM2sZao1DP50F6RnbTyrLol8DNlcZRa2KiLd84XCVJP1d2syDQALhpDsGWDSuk5_rpIYtEfDS5O7Gnv0O50ZUwcrU5WeeoOsdB0McOReCTYu-xBefCUAVICN-uTMObbQIY_Gf44Y-D4jz4DOeRp6vfZid6GWnn-z6Esxjs5AHoN_DZp1V8lcqMjcdfd1verxWc1koa_nA5pD2tIdxA2IbClThNTix18bOMTA5G4gL3SsRg6w_MSwKUBs8TmJFFp7zeFRzslkt1sxALs22dr1h3uQ-UDalLC98wPSsRB3xkUa7JgDNpjcHIgCtUUj-HXrq63geIKnEFpMFhD0Cp6-bu6JzgaG9l7lUXbdG2VQS1jcgfP2xyEynroqdfuEYvM0lJAu3vgdfVD_WHFUvnBbZ2qozbPacGFIcThGHXWhspmBdV1e3j_Vx52384KTIXgA307ouMQ4t_xGkHsdukZlQFdlsicaDz4a5E0MpfuLRDwkoUXUZED1QSXt_OltOkOsZgK-ay8A25jkbuQVyzpyioEJPQw33jFZcTNFO2FvrLu32IYNX6mDgNkqZPhwmDCnfIljR_KCU47eRZPapC_UsQsHcTXktFdRROTDgaEwnm4awtbkYfkPlNfTIgGeuuo0-lCUx44xzWZ4H_D-evX20SVUhTNHJzOcxo-xyAbmBUQ7oSRbsdDOvodMD16cZLEv_e0kT6r5FenkapGMJNWwzETicUPtKdgbokcIFOEUbhpsWwdxZg9uHGCz9KvEgjB4w=w206-h207-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/pJWgNvppSfqRQS19ZkMEIvce5q-9ZvMVH0y2-w1vW2x1AFCW3xsvu6HLzdrlCv-ac2kOTB37ockwit4y6O3ZjzGFEi2v7mwFfyeqmxKEyGnTPuj-ODVhIq8G2qcMwCAOgnAIXDJAMcVweXiOJG4jCBcjNa8SDfEjlkwDDUjo9scAFiyj0WQdrFCS8RQ8tvIHW3XyHItYVSXAJN4mO0TtQ-xap4xTGkaUQxq4Gq8_clkMK9Sa6aAjn0SUZ_fjTf-vCwIAd658bp66buDKWsXLV1Z4UXaQntXvSmllKYIUYF8WGW33QtU63JlGF2_9lhb2cPWkS1uSqt_KGxlBSBwIu7YirMj_M18NvcZ47QNJq3p40cvjCAF8-4mkZB6Uk6nBM-qogSj5mZ_E9Si8Avqqv4whqgUUJyKADYlKPTpq0ZQR8MHO6OB_1eCyMxMbds0Rtnqkmf6AOykQWUpDFtgxPovdfaI1DKyPbDeoAaThet1VXkhsBPhqGE7NYmoT4-sUVdwJqeUEB18AsMP0RSI5q7lXoglDcANv1KGGvgwmJ8w4bO2iIzDQorBg6aV0fkM5EdHNnVxM5zvfA2mMgwyrKhuNZWks9Z_kBMJbRidRGpTEdpPllZHM7-xJzw7KfIjF3YLE5NEsnSeu0h6CnMj_VdHDZsYJDjGfsy2AzqdiPWcbwJVkrjZVJC2L-OvQmipNvU-iwPPm6-ypbor6wrktKzBGSk68BpDdyNp5IH79YY040u8Nk9eN421CRHKqFKd0cd9p3l-WdDZKfiBieVpMzDX7qKD6Hns5w06-hAtlPjBk9WxmP9vjD1H6qrEpEu71Iw556GtyoaPbEKTjEHhIZj_9lDC3tej4mC5V9kBRw5kYpRytDGGu6IkrujsXNH5sendkJpkYT0-1DRNPLi64eoS9VzJ2fmaA5VE8t-EkGcP49bw3IopET0YsHv7_dbaAw_mynVkqBzKBw1DJ8GMGB-xTxXfCgGT7FVeQKRPRMc8-xsnGkDTrbfuL54YDADy7yFklpzOxoVUst3iMb5yCDCalXiSJ1w=w1920-h864-s-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #096c86;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #096c86;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #ffd3e2;">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">UI Development</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 20%; background-color: #df3670"></span>
+                                </div>
+                                <p class="box-progress-percentage">20%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/QqavfEcnNyPEkmJzJUwbDlBvrarsoqi6Jratnl5r4CvXObBNtbJGfNgGnVtXfxjadO6jZiiwSIjUTOncltBMY_K_30th0tGCN-DIL80ReddhoG2KK_xhDYOOYdrdyITTUI2E8HbGliVncSgwB5jceWNPW8QX_vil_qejFzzqV4Hm-8YGduNnbwJMLirs8mAeGXTdbsB_gSSycKVhJIDsUEVXpVv8Yy5ny30Q8p7oT5vIez7Wq2t5JG9rRRLCA2gSBIyKy_oNmdT8yLNhs-yi9AA54CaIe38Kr3-fySC1lFyBepx6Iko0kpkjSg-0Cvpp6oDFRaK_0BKoi2zBKmOwBIc_4SGHf8Ucu4M4brE6BfgbEzikBfMEqtxs_huASPPAtpVv0uNEsx9myxSlP2WNOgF2UVlJxisZjVnAPPO31C4CSSJO6h--vlUO38tHmXM8V1fvXA0326c_qWcrM9YPl9d4kXbi5qAz1KrkMP-olhrJFJdaNIXRts-Ey0vDCV530RJMxHM2LZBVBKJDIiPhIEQO3Kpkaee7Wy0BFIJjOllFLfRkNk_eNl1Up7qYwGRXSBUXHtDA0msXkNZhz9ypKi5VJxiTA0KF7r_D4sofMw-KCWejMpm-5VcheEqt4xllW8Ha2_BTSaGF2jCiWIVAjKvndrZRGlKrG8Id2lcamRPpzuRVTgBpR_cTtks66pVMi8UQ9bczezQFFu-8ot_sH89pV__r9FCD6bls6EojDzK0gkVkL62JGbLRrO7YgB_kFADofoWT1VphMiB65SuoLOfL4MxZ7kVhsuFqSLoKrrAJRo_sr2exMtJaDuJyIVIpa2Fe33erv3qTobC_xwAdixamveaagsAfEaN2kA3dxzqypkiKB3iD0fWlILQSswty-2CM6ufkcbAmPFzbYCO27KRDc7qHGkwtQ3hKyKHzab4xDq_7Gf7K7b549282dTPJ3tIrbvi2pMSdlFVlGow2kjaY6Q7EKFikIgBqznNg6TtlzT_NbNp8Q1J_dEItrfJZWbZ0LlZeAcWPbqgDnDk9-_W8H5eIRg=w718-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/nhF19eJxNl3pphZ2hhoXuxQ_rsgH-BQ6sVt_dFo2XJ3Q_lle_FXdxZeT33HaT884wH2yFGW7oAVPeQJsLm75B7nui4M1oYiPYiNi1_u3xH_s-qkttv4st3DKTtqYPxFILw3_sTdaahzC9BiTcUqc1eavCQhhDdJ42A4ZC73on2NerWh_yFA1Uc3s73n13qhTp-XytUQ1TvU5zNbKdwAjfCs1IHlF1k0eN-g_L48PI85zG4btBGnfX_IWsgwh-D9b7WkVgR5pDYC-8JOIaalLbTjgcP7JeRM2sZao1DP50F6RnbTyrLol8DNlcZRa2KiLd84XCVJP1d2syDQALhpDsGWDSuk5_rpIYtEfDS5O7Gnv0O50ZUwcrU5WeeoOsdB0McOReCTYu-xBefCUAVICN-uTMObbQIY_Gf44Y-D4jz4DOeRp6vfZid6GWnn-z6Esxjs5AHoN_DZp1V8lcqMjcdfd1verxWc1koa_nA5pD2tIdxA2IbClThNTix18bOMTA5G4gL3SsRg6w_MSwKUBs8TmJFFp7zeFRzslkt1sxALs22dr1h3uQ-UDalLC98wPSsRB3xkUa7JgDNpjcHIgCtUUj-HXrq63geIKnEFpMFhD0Cp6-bu6JzgaG9l7lUXbdG2VQS1jcgfP2xyEynroqdfuEYvM0lJAu3vgdfVD_WHFUvnBbZ2qozbPacGFIcThGHXWhspmBdV1e3j_Vx52384KTIXgA307ouMQ4t_xGkHsdukZlQFdlsicaDz4a5E0MpfuLRDwkoUXUZED1QSXt_OltOkOsZgK-ay8A25jkbuQVyzpyioEJPQw33jFZcTNFO2FvrLu32IYNX6mDgNkqZPhwmDCnfIljR_KCU47eRZPapC_UsQsHcTXktFdRROTDgaEwnm4awtbkYfkPlNfTIgGeuuo0-lCUx44xzWZ4H_D-evX20SVUhTNHJzOcxo-xyAbmBUQ7oSRbsdDOvodMD16cZLEv_e0kT6r5FenkapGMJNWwzETicUPtKdgbokcIFOEUbhpsWwdxZg9uHGCz9KvEgjB4w=w206-h207-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #df3670;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #df3670;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #c8f7dc;">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Data Analysis</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 60%; background-color: #34c471"></span>
+                                </div>
+                                <p class="box-progress-percentage">60%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/uAr_DnjMwbgRWiWdCU_nYmsOCZz2OmoN2A44xmqWjCayuHx8LeGxY8r_2dBMnzbP7HMdDNM-oczHSXVA-IEqEYZkRP2UH-2J2R7B9guxA678V1lWZHUs22lza_kvTVcxA-4oIoPsC1yYDc8QvjrcpP01TVOSKDaYKuSdRiYYeMlhlx6aOQenQ-hYRaPdsVcpmSh3WlFm3lKwCPPqaD3T2pT-9xGmFfAI5Sma0cb_3qsSEGT6JTUfOAKKupS8qAMMWgIlwptlB0_Aw5QE-Wo6bCQ1jyoto9jtBQuKlTw220-UDP6pfWLt7Lc4DMVWXT2NazV-Bk0j60zwO_LwzM0aBee8tNVWRh57Qt1NlD8seepELFCyMAQt7yjtctVWS3LSZRfcuq_CmepofqLgmZEDXofEpmArHb5BO0XiN1uiECrtFj-mtnWWFb1OOsOk27-oyNLss8MMIbSDPBmddLsPj4m75HZU_LrBi5NqqYTAXZLVKhVomYyfEHUVxF8x8z7FoWWd80yf2qqmL118vB9D4y8uS-ySESiYa7mo6zUQyhNBAxwQ5yaikJjkRJF_EWA0qyMsly7avjJ5j5QQv_VLjRBQB0kB8jJqkZ7-fMDrK22nukHsCSL1bBFMIMQ0OnWhU4wKjsvfCrmh22HVp_WsmOcqaDV724naZRNcgjjBXtd6RCjhdDpqg0jnkStbp8Gxwe-vV6KsFvcZXbBfAE2XUARRhjAY9uvN6G0nFOj3FSzRG7gCVEvzGStu6IJevNBq-oDoNLZIAj_6WBJdQiNyT03eBdg0gjC2cCwEQyviUwoSDmDfLOdN3wnMK-FhvvRdsovczrQ6LDxBELpDpDb90Nrh7fR8FbjYybY34Gj1w18hrZoxeA3cP6TA9gTNw5mMvw2B0YWNiaTUT4t-V8FoIy6hzLa7eFuEXm8gYcekE1_CJZqTq6MIUdHrCfRWgnXQab8ZB829NMxJk_PHZ7F9u7KP4ZEsuPja8Vcc4H4nbPFbUotT4bQPK5wNm3rOKpz3KLwBeUlvf4dX5zDd6ZmrF95RYN1RgA=w430-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/7Av8CLabqrMb-3c8Kttv-3VoIYrSV6xDUwz6OJLEdwNlfvV8viIMRKY_UNYCkQx82lpPLMt4aqsUWJ6Bg1cvDPy2QRXr3xFqUMLhrr9Y-rqzWfZF6mncTLB2wwrEH7bB1o0EA4X2GnQv_1uVQI3weGDUdfc0_tbHvjMnUdcbbrSJTc6eMOexwr3rSAWGUj4uKiF_cYsxGHeMWhH7uHhBKzCx7S-WXuF-w5NL4lSyjfH01CwG1iRfd2SoECCvUVJHO2femeY6PTpK-wzw6ZQLb7rLQeKtdjTE15EtHuN1GmZXi7KOTNvkEKEZ0v-DsKQ2d8i_bttda38bv9kQovBXIqYvr3dPu9OrumYGg03cWNlJHKsPlNOTAvBUpYAy0KFd2s5v6dErj6ZCoaI0ehnon4FR_FhU-YkDESiw0AkSCFMlkcfVa3NQjJaxBihif0vAO91N0ZtuLl4uHBkxmURW-HRBNOgproiAeIGJU5QWPzgT28my2iJ5S2hHpGM-rq8GckllGB0Zw2FJlmCV34T5XObCMKlUONp4n9yOJ9UNQoFI42u4q5VcGNUMRzL8xdSIUYkMnYqvO-PnvMM6HhnhkgoZiePQDUPs0jWoEp6yPSj5aVVNSNOdNdgQirkNmhq2Zdcewtd9ONysPqCNP-hPKNRROwH_EA3a2L4W13RN5JVgr5MBqIgDV6ap0bcdzVQmPJV5oc-giKZyD_ppywxrAoODjbsY5Ko3UDxMAFG5m1eA86JN4JF3sx5c19lbKOQ9OaEJuUWGavXeiDMjR160WBYfjhA5LLJ85Xg5oDOJuh-5C8OXWKkWkzTY7gpMgIZCcFTNZmLwbkOM0fDZgZwFn-BhEuupe-RpoDLl_rUCSsOLLpuY3s9iF0wbv-wTi-Ge8QNTA5IQ8bZfsGUMMjWssi8aUBbV521UDQcdLgbN_BpVnIQ1im6rIZo12BNCwciEruivbKFbHRbPdtkRBiAzVRgqxPKvMyWnR68UX4nP2Cq--S3evn-APblqICxVDAXmw_0Vhh34oT_7H3Kto_XtopyOI8OR2w=s211-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #34c471;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #34c471;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #d5deff;">
+                            <div class="project-box-header">
+                                <span>June 15, 2023</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Web Designing</p>
+                                <p class="box-content-subheader">Prototyping</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Progress</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 40%; background-color: #4067f9"></span>
+                                </div>
+                                <p class="box-progress-percentage">40%</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://lh3.googleusercontent.com/QqavfEcnNyPEkmJzJUwbDlBvrarsoqi6Jratnl5r4CvXObBNtbJGfNgGnVtXfxjadO6jZiiwSIjUTOncltBMY_K_30th0tGCN-DIL80ReddhoG2KK_xhDYOOYdrdyITTUI2E8HbGliVncSgwB5jceWNPW8QX_vil_qejFzzqV4Hm-8YGduNnbwJMLirs8mAeGXTdbsB_gSSycKVhJIDsUEVXpVv8Yy5ny30Q8p7oT5vIez7Wq2t5JG9rRRLCA2gSBIyKy_oNmdT8yLNhs-yi9AA54CaIe38Kr3-fySC1lFyBepx6Iko0kpkjSg-0Cvpp6oDFRaK_0BKoi2zBKmOwBIc_4SGHf8Ucu4M4brE6BfgbEzikBfMEqtxs_huASPPAtpVv0uNEsx9myxSlP2WNOgF2UVlJxisZjVnAPPO31C4CSSJO6h--vlUO38tHmXM8V1fvXA0326c_qWcrM9YPl9d4kXbi5qAz1KrkMP-olhrJFJdaNIXRts-Ey0vDCV530RJMxHM2LZBVBKJDIiPhIEQO3Kpkaee7Wy0BFIJjOllFLfRkNk_eNl1Up7qYwGRXSBUXHtDA0msXkNZhz9ypKi5VJxiTA0KF7r_D4sofMw-KCWejMpm-5VcheEqt4xllW8Ha2_BTSaGF2jCiWIVAjKvndrZRGlKrG8Id2lcamRPpzuRVTgBpR_cTtks66pVMi8UQ9bczezQFFu-8ot_sH89pV__r9FCD6bls6EojDzK0gkVkL62JGbLRrO7YgB_kFADofoWT1VphMiB65SuoLOfL4MxZ7kVhsuFqSLoKrrAJRo_sr2exMtJaDuJyIVIpa2Fe33erv3qTobC_xwAdixamveaagsAfEaN2kA3dxzqypkiKB3iD0fWlILQSswty-2CM6ufkcbAmPFzbYCO27KRDc7qHGkwtQ3hKyKHzab4xDq_7Gf7K7b549282dTPJ3tIrbvi2pMSdlFVlGow2kjaY6Q7EKFikIgBqznNg6TtlzT_NbNp8Q1J_dEItrfJZWbZ0LlZeAcWPbqgDnDk9-_W8H5eIRg=w718-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <img src="https://lh3.googleusercontent.com/U8exlIkMnOI37U--1kfzZZKcmlZUz3gmV-KtPLM2q6uDQvY-MORzor7V-rTSLFw56SRha52k9svp58ll6lIDMtPQfLR3ipS5DNwd7U62_LtyzblGntR_U7M8MkLNh5VUIqlUr_LYQhGR4B8kYpGJ3j3y0fdds3eGspUyt-NVmY37r6ADSiLkBsmQlhSgySE2FOAgp-O4Ql3nlVwkjK-5S_6747W6Lh1X5t1P8RlKZHd54_7sh2QLkz2E2l8SvsS5bF4s8d-dfZjTjXbC5qqi_zV2N4wAKXEJHpbJdhlmZoQ6UT_2gSOlNWfYv4T1teRjkeC7s6hLWU_XWkBBiGZdo-fa3Ga2-RRykS1-pMn2VMkGVygR4i3_q286dvIwdDWO-ST2JnAj6p578IKYrZodK20mIfqMc9NE5Tt-533X6w-hDFCBejuiY40Lt5NeZR58IL8cgRwPN6Z3JoTUKIri_odeOe0nXfTadhuKmaWTENslHqGMSrhs8hx24Gz4qeGxVwD0q-Lmxu6stoWNp4qhdDGpm1UdddQuYJ2BXqnbEFzi9nvXRzCONstfUrsno5hbK3oLDs4aryURHCRm0mwvPYxa_BLzl9EICk2-x5HpI4mlXi0JGZEjyrPj5f4CMGizFVbJ-eZ4GUfs2TnFxsoVKTAEEgNKZ1ulF4SL4_0NtlztVTI30W26z8UUSdzDtXKlNhUxBWTHRcBXCLGkDlErKRDD6I-ki_TZkpqP0pddm7zojWFgNSFtthBHs2auKtJSXj1P__4iPyowJ1-wcOG6VwNXIrchy15ho4V4M5R-v2dMZbXOosiHpnmnDRTJaIjUdGjrIhKWE6nEvF1R8Cxa2jA_MpJloIYrH1COD1x6-WJn4hSpLGmRggXOcUfxKw2pjC_U6jbmKZlhFLpLqNB6DScshei_ouxdiYmY8i5WS-vrq-BsT_-joS-2M8nxyJUfdnfJ0sjVdZyXqeQuw1A_AGoWr34h12b9jU6mKPiXyuh1QKMEicqdPshUpi6bWSPeUOj291Jue7DkZmQd3hMXlE4Zi15EFg=w674-h898-s-no?authuser=1"
+                                        alt="participant">
+                                    <button class="add-participant" style="color: #4067f9;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #4067f9;">
+                                    1 Days Left
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="messages-section">
+                <button class="messages-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="15" y1="9" x2="9" y2="15" />
+                        <line x1="9" y1="9" x2="15" y2="15" />
+                    </svg>
+                </button>
+                <div class="projects-section-header">
+                    <p>Client Messages</p>
+                </div>
+                <div class="messages">
+                    <div class="message-box">
+                        <img src="https://lh3.googleusercontent.com/uAr_DnjMwbgRWiWdCU_nYmsOCZz2OmoN2A44xmqWjCayuHx8LeGxY8r_2dBMnzbP7HMdDNM-oczHSXVA-IEqEYZkRP2UH-2J2R7B9guxA678V1lWZHUs22lza_kvTVcxA-4oIoPsC1yYDc8QvjrcpP01TVOSKDaYKuSdRiYYeMlhlx6aOQenQ-hYRaPdsVcpmSh3WlFm3lKwCPPqaD3T2pT-9xGmFfAI5Sma0cb_3qsSEGT6JTUfOAKKupS8qAMMWgIlwptlB0_Aw5QE-Wo6bCQ1jyoto9jtBQuKlTw220-UDP6pfWLt7Lc4DMVWXT2NazV-Bk0j60zwO_LwzM0aBee8tNVWRh57Qt1NlD8seepELFCyMAQt7yjtctVWS3LSZRfcuq_CmepofqLgmZEDXofEpmArHb5BO0XiN1uiECrtFj-mtnWWFb1OOsOk27-oyNLss8MMIbSDPBmddLsPj4m75HZU_LrBi5NqqYTAXZLVKhVomYyfEHUVxF8x8z7FoWWd80yf2qqmL118vB9D4y8uS-ySESiYa7mo6zUQyhNBAxwQ5yaikJjkRJF_EWA0qyMsly7avjJ5j5QQv_VLjRBQB0kB8jJqkZ7-fMDrK22nukHsCSL1bBFMIMQ0OnWhU4wKjsvfCrmh22HVp_WsmOcqaDV724naZRNcgjjBXtd6RCjhdDpqg0jnkStbp8Gxwe-vV6KsFvcZXbBfAE2XUARRhjAY9uvN6G0nFOj3FSzRG7gCVEvzGStu6IJevNBq-oDoNLZIAj_6WBJdQiNyT03eBdg0gjC2cCwEQyviUwoSDmDfLOdN3wnMK-FhvvRdsovczrQ6LDxBELpDpDb90Nrh7fR8FbjYybY34Gj1w18hrZoxeA3cP6TA9gTNw5mMvw2B0YWNiaTUT4t-V8FoIy6hzLa7eFuEXm8gYcekE1_CJZqTq6MIUdHrCfRWgnXQab8ZB829NMxJk_PHZ7F9u7KP4ZEsuPja8Vcc4H4nbPFbUotT4bQPK5wNm3rOKpz3KLwBeUlvf4dX5zDd6ZmrF95RYN1RgA=w430-h898-s-no?authuser=1"
+                            alt="profile image">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <div class="name">Adi</div>
+                                <div class="star-checkbox">
+                                    <input type="checkbox" id="star-1">
+                                    <label for="star-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="message-line">
+                                I got your first assignment. It was quite good. We can continue with the next
+                                assignment.
+                            </p>
+                            <p class="message-line time">
+                                June 15
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message-box">
+                        <img src="https://lh3.googleusercontent.com/QqavfEcnNyPEkmJzJUwbDlBvrarsoqi6Jratnl5r4CvXObBNtbJGfNgGnVtXfxjadO6jZiiwSIjUTOncltBMY_K_30th0tGCN-DIL80ReddhoG2KK_xhDYOOYdrdyITTUI2E8HbGliVncSgwB5jceWNPW8QX_vil_qejFzzqV4Hm-8YGduNnbwJMLirs8mAeGXTdbsB_gSSycKVhJIDsUEVXpVv8Yy5ny30Q8p7oT5vIez7Wq2t5JG9rRRLCA2gSBIyKy_oNmdT8yLNhs-yi9AA54CaIe38Kr3-fySC1lFyBepx6Iko0kpkjSg-0Cvpp6oDFRaK_0BKoi2zBKmOwBIc_4SGHf8Ucu4M4brE6BfgbEzikBfMEqtxs_huASPPAtpVv0uNEsx9myxSlP2WNOgF2UVlJxisZjVnAPPO31C4CSSJO6h--vlUO38tHmXM8V1fvXA0326c_qWcrM9YPl9d4kXbi5qAz1KrkMP-olhrJFJdaNIXRts-Ey0vDCV530RJMxHM2LZBVBKJDIiPhIEQO3Kpkaee7Wy0BFIJjOllFLfRkNk_eNl1Up7qYwGRXSBUXHtDA0msXkNZhz9ypKi5VJxiTA0KF7r_D4sofMw-KCWejMpm-5VcheEqt4xllW8Ha2_BTSaGF2jCiWIVAjKvndrZRGlKrG8Id2lcamRPpzuRVTgBpR_cTtks66pVMi8UQ9bczezQFFu-8ot_sH89pV__r9FCD6bls6EojDzK0gkVkL62JGbLRrO7YgB_kFADofoWT1VphMiB65SuoLOfL4MxZ7kVhsuFqSLoKrrAJRo_sr2exMtJaDuJyIVIpa2Fe33erv3qTobC_xwAdixamveaagsAfEaN2kA3dxzqypkiKB3iD0fWlILQSswty-2CM6ufkcbAmPFzbYCO27KRDc7qHGkwtQ3hKyKHzab4xDq_7Gf7K7b549282dTPJ3tIrbvi2pMSdlFVlGow2kjaY6Q7EKFikIgBqznNg6TtlzT_NbNp8Q1J_dEItrfJZWbZ0LlZeAcWPbqgDnDk9-_W8H5eIRg=w718-h898-s-no?authuser=1"
+                            alt="profile image">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <div class="name">Ayush</div>
+                                <div class="star-checkbox">
+                                    <input type="checkbox" id="star-2">
+                                    <label for="star-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="message-line">
+                                Hey, can tell me about progress of project? I'm waiting for your response.
+                            </p>
+                            <p class="message-line time">
+                                June 15
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message-box">
+                        <img src="https://lh3.googleusercontent.com/Xox6H6MSqjqDCj4nAHK7KcIUbAuxn0QYkO0G2C9RnB6eGqipiMSN9Vh3bxQxjfhb-ibfFqNu0LDinnaQc35dw-mHc-onDiMQ35oPvJTcpwT86ZAD7A5aBt28Ah2d5i5ubIdySXTfoAg5oIdKSTIvyCtDdwp6cFwjLxFouKpkHwPJHGN4GPMt7AK426uXmUApZfj7S-QR-iXVn5qBcPsayxA60qL1E6xXP87icAharkEsS3u-zIHYZnbCCpV1bDf9KX2_LEUXDk0wBuFpraDzSuL4OnG8yFQYHxLEKkDtXWV4T5ZeL_We7kt7hrRTqQWUO4t8WnlqTOrPefV4NffjhzNxl3IJ-oS8SIIhhOF58jRyXp2NK5R7l1sivm-WkL2nWnnJkRdzPrp6Ots8OIVkhWqOqAN8lXPKUxl6HF_nzsjnnup6gl6PZcUE2EgWfHX_1cHWBXevD57eDPyrBSR1D6a-qZGksSlS1nSENk-tm7foghgH7M_LjGfPwsuTn9P0grohbVrYGzOyQzBM4KyDcf_5Z5HuIfQT1jCGHanBkjL_W-ugQe7VNhyajmucWhqW6JQzjjlstLEvQyHVLf9kP4J3mgk2o2LfC7RQ6za6N3zUn9VUXEy9JZR2sA7zXr19dr54zNeDBBliESfNWmeohp2RbusnP1skvFcv6nlvX43kzYttFnU2OgdzZqnR7RPYP23fjW1i7Ysb5XdbVLL19HIMRe00_O8i7j0akSDEJ1crXUULK71pfufmGtI593mb09aJzyrAoUUV5gxzV7nL6WSs8f7VkPj-FC91dN2tvciBlQ4MDHjenWcv3uRgzrvqbNTWiz5nzIuJ9BLy28PtBmH4bhGXs5av9J2RsRB_e-ATJoe9SOj6nU3gqvoApvypjmrwKWFqiTznDDsmsU8kLV_JQrf1QLcGOXNM_QW5a_i2x8vaiJf6DF6fcu3MTOlqj4s1boddK65yc8a1JcEp6PxSWx1p3tg8k-IDTtMVnbKwatSxSPXvryHYSZw7n634shwaDCmOLiSdZRxCEHvV-1QI93ygIw=w464-h508-s-no?authuser=1"
+                            alt="profile image">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <div class="name">Aryan</div>
+                                <div class="star-checkbox">
+                                    <input type="checkbox" id="star-3">
+                                    <label for="star-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="message-line">
+                                Awesome! I like it. We can schedule a meeting for the next one.
+                            </p>
+                            <p class="message-line time">
+                                June 15
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message-box">
+                        <img src="https://lh3.googleusercontent.com/rcYAYpOKP3cX1CO7TQL9LcYFD8VMrz-PlTbNrsJRMS7Hw5-BM72BJszdAbKQXsdhKI5pNeNS3pagpqzbexc7jKw-nQLSbkpRQYfPjYAnX5KYN0jiqLsxCfl9n9D_D9OZmrlNVoftOHmXfcXG9oj2IoEKYt4cvV_TiZ9ak0sQgrMeavcqyz6jlggn52cGaVGnvmz6afqtdRBBu5OqcnkuiMET66PA20lbK06y33Ugz0xwNr2r7khFMGS2WSIxfjASZh_u1odkl77-2HfaODHxrxFTs42LwoRwoMcnbD0TKXXuCuSLAThZGecGCemQYEBo0358ySUhpZmkk0A1MX3WIBmSJTC0t5BThdU-n8BOr_34c6QIZZYqYxDorE2CZs5tXbNjZp4jPG-k-r9N6V2QvkpnC_EI-EdpYh3C4Dmz10209ZhYVnjVSHod24rYcKGz4cKx9DJwUF1u_O0P4YWkB9-AEoHuqvtMkDtSwmV7A9QAPkCBElN6_18A1kySdfW9kVh4W8s42Ds1cXYhdEaHxCjxtkkAr0cQV639RscDHEso493YlC1QoF8MQJVLqHZuBgYuz2UzFSxaZRoJ1klOdtso0akAEaM1_JQuVPT4yEcUXzIVWoDWNRhpPE8bwciIA29INAnt73reRaC7OD3wIp5ONoekt7BWn31r5ugO-ZKeSgdaf9NFYiNBxZUc3iJWakhJxuRy9-RIstVP7bSnukV3ken_HSqEwpTHO2GhvWEMQgA7h8PGZom7i2sD1RclYZMb_Fb69pde93yM_YmuvB8Cjr4OvvAxjyDfS7524c5qUiRv4KrkEg-ZN15itkgdn5s0tKnmeXvWi6lYMN73Kosi6RWS_f9Z_BkZ4R-k0ZQQh0hVGRrn05xJyXogzatoKZn57UvX-N_dsv4C3csq6MB51y6wkKobMCNX0qkpRBTfaPmJ2vIoNUxK9Vfdok7zb4_Y0Vgaocjq6Lnk50Bsr2sGsBG4cLAtZDrOwmtAij-W_12NJM-KSX-pubLt_86N-t2kDv59sExGK2LtCCBPlAk0u3vgzA=w430-h898-s-no?authuser=1"
+                            alt="profile image">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <div class="name">Raaj</div>
+                                <div class="star-checkbox">
+                                    <input type="checkbox" id="star-4">
+                                    <label for="star-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="message-line">
+                                I am really impressed! Can't wait to see the final result.
+                            </p>
+                            <p class="message-line time">
+                                Jun, 11
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var modeSwitch = document.querySelector('.mode-switch');
+            modeSwitch.addEventListener('click', function () {
+                document.documentElement.classList.toggle('dark');
+                modeSwitch.classList.toggle('active');
+            });
+            var listView = document.querySelector('.list-view');
+            var gridView = document.querySelector('.grid-view');
+            var projectsList = document.querySelector('.project-boxes');
+            listView.addEventListener('click', function () {
+                gridView.classList.remove('active');
+                listView.classList.add('active');
+                projectsList.classList.remove('jsGridView');
+                projectsList.classList.add('jsListView');
+            });
+            gridView.addEventListener('click', function () {
+                gridView.classList.add('active');
+                listView.classList.remove('active');
+                projectsList.classList.remove('jsListView');
+                projectsList.classList.add('jsGridView');
+            });
+            document.querySelector('.messages-btn').addEventListener('click', function () {
+                document.querySelector('.messages-section').classList.add('show');
+            });
+            document.querySelector('.messages-close').addEventListener('click', function () {
+                document.querySelector('.messages-section').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+
+</html>
